@@ -18,72 +18,72 @@ function Cube( vertexShaderId, fragmentShaderId ) {
 
     this.positions = { 
         values : new Float32Array([
-	  -0.5, -0.5, 0.5,//Left, Down, Forward//FRONT FACE
-	   0.5, -0.5, 0.5,//Right, Down, Forward//FRONT FACE
-	   0.5, 0.5, 0.5,//Right, Up, Forward//FRONT FACE
-	  -0.5, 0.5, 0.5, //Left, Up, Forward //FRONT FACE
+	  -0.5, -0.5, 0.5,
+	   0.5, -0.5, 0.5,
+	   0.5, 0.5, 0.5,
+	  -0.5, 0.5, 0.5, 
 	   
-	  -0.5, -0.5, -0.5,//Left, Down, Back//BACK FACE
-	  -0.5, 0.5, -0.5,//Left, Up, Back//BACK FACE
-	   0.5, 0.5, -0.5,//Right, Up, Back//BACK FACE
-           0.5, -0.5, -0.5,//Right, Down, Back//BACK FACE
+	  -0.5, -0.5, -0.5,
+	  -0.5, 0.5, -0.5,
+	   0.5, 0.5, -0.5,
+           0.5, -0.5, -0.5,
 	  
-	  -0.5, 0.5, -0.5,//Left, Up, Back//TOP FACE
-	  -0.5, 0.5, 0.5,//Left, Up, Forward//TOP FACE
-           0.5, 0.5, 0.5,//Right, Up, Forward//TOP FACE
-	   0.5, 0.5, -0.5,//Right, Up, Back//TOP FACE
+	  -0.5, 0.5, -0.5,
+	  -0.5, 0.5, 0.5,
+           0.5, 0.5, 0.5,
+	   0.5, 0.5, -0.5,
 	
-	  -0.5, -0.5, -0.5,//Left, Down, Back //BOTTOM FACE
-	   0.5, -0.5, -0.5, //Right, Down, Back //BOTTOM FACE
-	   0.5, -0.5, 0.5, //Right, Down, Forward //BOTTOM FACE
-	  -0.5, -0.5, 0.5, //Left, Down, Forward //BOTTOM FACE	
+	  -0.5, -0.5, -0.5,
+	   0.5, -0.5, -0.5, 
+	   0.5, -0.5, 0.5, 
+	  -0.5, -0.5, 0.5, 	
 		
-           0.5, -0.5, -0.5,  // Right, Down, Back //RIGHT FACE
-	   0.5, 0.5, -0.5, // Right, Up, Back //RIGHT FACE
-	   0.5, 0.5, 0.5, //Right, Up, Forward   //RIGHT FACE
-	   0.5, -0.5, 0.5,//Right, Down, Forward //RIGHT FACE
+           0.5, -0.5, -0.5,  
+	   0.5, 0.5, -0.5, 
+	   0.5, 0.5, 0.5, 
+	   0.5, -0.5, 0.5,
 		
-	  -0.5, -0.5, -0.5, // Left, Down, Back //LEFT FACE
-	  -0.5, -0.5, 0.5, //Left, Down, Forward //LEFT FACE
-	  -0.5, 0.5, 0.5,   //Left, Up, Forward //LEFT FACE
-	  -0.5, 0.5, -0.5  //Left, Up, Back //LEFT FACE
+	  -0.5, -0.5, -0.5, 
+	  -0.5, -0.5, 0.5, 
+	  -0.5, 0.5, 0.5,   
+	  -0.5, 0.5, -0.5  
             ]),
         numComponents : 3
     };
 	
 	 this.colors = {
         values : new Float32Array([
-		//FRONT FACE
+		
 	  	0.9,  0.5,  0.2,
    		0.9,  0.3,  0.3,
    		0.7,  0.5,  0.4,
    		0.9,  0.2,  0.5,
   
- 	 	// BACK FACE
+ 	 	
   		0.75, 0.2, 0.5,
   		0.5, 0.3, 0.3,
   		0.75, 0.4, 0.5,
   		0.4, 0.5, 0.5,
   
- 	 	// TOP FACE
+ 	 	
   		0.5,  0.2, 0.2,
   		0.5,  0.3, 0.2,
   		0.5,  0.4, 0.2,
   		0.5,  0.5, 0.2,
   
- 	 	// BOTTOM FACE
+ 	 	
   		0.2, 0.0, 0.75,
   		0.3, 0.0, 0.7,
   		0.4, 0.0,  0.65,
   		0.5, 0.0,  0.55,
   
- 	 	// RIGHT FACE
+ 	 	
    		0.3,  0.8,  0.0,
    		0.3,  0.5,  0.3,
    		0.2,  0.8,  0.0,
    		0.3,  0.9,  0.6,
   
-  		// LEFT FACE
+  		
    		0.2,  0.8, 0.2,
    		0.3,  0.8, 0.2,
    		0.2,  0.8, 0.5,
@@ -94,12 +94,12 @@ function Cube( vertexShaderId, fragmentShaderId ) {
     
    this.indices = { 
         values : new Uint16Array([
-        0,  2,  1,      0,  3,  2,    // FRONT FACE
-    	4,  6,  5,      4,  7,  6,    // BACK FACE
-    	8,  10,  9,     8,  11, 10,   // TOP FACE
-    	12, 14, 13,     12, 15, 14,   //BOTTOM FACE
-    	16, 18, 17,     16, 19, 18,   // RIGHT FACE
-    	20, 22, 21,     20, 23, 22   // LEFT FACE
+        0,  2,  1,      0,  3,  2,    
+    	4,  6,  5,      4,  7,  6,    
+    	8,  10,  9,     8,  11, 10,   
+    	12, 14, 13,     12, 15, 14,   
+    	16, 18, 17,     16, 19, 18,  
+    	20, 22, 21,     20, 23, 22   
         ])
     };
     this.indices.count = this.indices.values.length;
