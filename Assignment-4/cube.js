@@ -22,7 +22,7 @@ function init() {
   document.getElementById("xButton").onclick = function(){
     console.log("someone pressed this button");
   }
-  document.getElementById("slider".onchange = funciton(){
+  document.getElementById("slider").onchange = funciton(){
     console.log("changing the slider");
   }
 }
