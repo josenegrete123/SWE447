@@ -19,10 +19,12 @@ function init() {
 
   render();
   
-  document.getElementById("xButton").onclick = function(){
+  document.getElementById("xButton").onclick = function()
+  {
     console.log("someone pressed this button");
   }
-  document.getElementById("slider").onchange = function(){
+  document.getElementById("slider").onchange = function()
+  {
     console.log("changing the slider");
   };
 }
