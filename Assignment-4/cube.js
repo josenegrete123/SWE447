@@ -18,6 +18,10 @@ function init() {
   cube = new Cube();
 
   render();
+  
+  document.getElementById("xButton").onclick = function(){
+    consol.log("someone pressed this button");
+  }
 }
 
 function render() {
