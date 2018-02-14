@@ -24,7 +24,7 @@ function init() {
   }
   document.getElementById("slider").onchange = function(){
     console.log("changing the slider");
-  }
+  };
 }
 
 function render() {
