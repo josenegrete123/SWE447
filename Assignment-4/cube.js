@@ -20,7 +20,7 @@ function init() {
   render();
   
   document.getElementById("xButton").onclick = function(){
-    consol.log("someone pressed this button");
+    console.log("someone pressed this button");
   }
 }
 
