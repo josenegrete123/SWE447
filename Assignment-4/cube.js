@@ -27,6 +27,12 @@ function init() {
   {
     console.log("changing the slider");
   };
+  canvas.onkeypress = function() {
+    switch(event.Keyboard.Key) {
+      case 'f' : console.log("pressed f"); break;
+      case 's' : console.log("pressed s"); break;
+    }
+  };
 }
 
 function render() {
