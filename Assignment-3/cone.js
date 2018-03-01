@@ -86,5 +86,7 @@ function render() {
     cone.render();
     windows.requestAnimationFrame(render);
 }
-
+function degToRad(degrees) {
+    return degrees * Math.PI / 180;
+}
 window.onload = init;
