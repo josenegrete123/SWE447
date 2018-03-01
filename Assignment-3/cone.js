@@ -31,27 +31,18 @@ function init() {
         alert("Unable to setup WebGL");
         return;
     }
-
-    gl.clearColor(0.5, 0.0, 1.0, 1.0 );
-
-    cone = new Cone(gl);
-    
-    render();
-}
-
-canvas.onmousedown = function handleMouseDown(event) {
+    canvas.onmousedown = function handleMouseDown(event) {
         mouseDown = true;
         lastMouseX = event.clientX;
         lastMouseY = event.clientY;
     }
-
-document.onmouseup = function handleMouseUp(event) {
+    document.onmouseup = function handleMouseUp(event) {
         mouseDown = false;
         if (stoprotating) dAngle = 0.0;
         return;
 
     }
-document.onmousemove = function handleMouseMove(event) {
+    document.onmousemove = function handleMouseMove(event) {
     if (!mouseDown) {
       if(stoprotating) dAngle = 0.0;
       return;
@@ -65,6 +56,15 @@ document.onmousemove = function handleMouseMove(event) {
     lastMouseX = newX;
     lastMouseY = newY;
     }
+
+    gl.clearColor(0.5, 0.0, 1.0, 1.0 );
+
+    cone = new Cone(gl);
+    window.requestAnimationFrame(render);
+    //render();
+}
+
+
 
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
