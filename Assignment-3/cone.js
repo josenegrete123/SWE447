@@ -68,7 +68,23 @@ document.onmousemove = function handleMouseMove(event) {
 
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
+     V = translate(0.0, 0.0, zvalue);
+    angle += dAngle ;
+    //offset = [ -3.0,  3.0, 0.0 ];
+    var axis = undefined; //[ 1.0, 1.0, 1.0 ];
+    if (rotationAxis != undefined) axis = rotationAxis;
+    else axis = [ 1.0, 1.0, 1.0 ];
+  
+    ms = new MatrixStack();
+    ms.push();
+    ms.load(V);
+    ms.translate(offset);
+    ms.rotate((speed * angle), axis);
+    ms.scale(1.0, 1.0, 1.0);
+    cube.MV = ms.current();
+    ms.pop();
     cone.render();
+    windows.requestAnimationFrame(render);
 }
 
 window.onload = init;
