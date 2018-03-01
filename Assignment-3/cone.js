@@ -62,7 +62,6 @@ function init() {
 
     cone = new Cone(gl);
     window.requestAnimationFrame(render);
-    render();
 }
 
 
