@@ -1,6 +1,7 @@
 var cone = null;
 var gl = null;
 
+var canvas = undefined
 var near = 1.0;     // near clipping plane's distance
 var far = 10.0;     // far clipping plane's distance
 
