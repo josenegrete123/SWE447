@@ -58,10 +58,11 @@ function init() {
     }
 
     gl.clearColor(0.5, 0.0, 1.0, 1.0 );
+    gl.enable(gl.DEPTH_TEST);
 
     cone = new Cone(gl);
     window.requestAnimationFrame(render);
-    //render();
+    render();
 }
 
 
