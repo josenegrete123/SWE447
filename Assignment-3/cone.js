@@ -81,7 +81,7 @@ function render() {
     ms.translate(offset);
     ms.rotate((speed * angle), axis);
     ms.scale(1.0, 1.0, 1.0);
-    cube.MV = ms.current();
+    cone.MV = ms.current();
     ms.pop();
     cone.render();
     windows.requestAnimationFrame(render);
