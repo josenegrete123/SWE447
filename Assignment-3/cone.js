@@ -68,7 +68,7 @@ function init() {
 
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
-     V = translate(0.0, 0.0, zvalue);
+    V = translate(0.0, 0.0, zvalue);
     angle += dAngle ;
     //offset = [ -3.0,  3.0, 0.0 ];
     var axis = undefined; //[ 1.0, 1.0, 1.0 ];
