@@ -30,13 +30,13 @@ function Cone( gl, numSides, vertexShaderId, fragmentShaderId ) {
     for ( var i = 0; i < n; ++i ) {
         theta = i * dTheta;
         positions.push( Math.cos(theta), Math.sin(theta), 4.0 );
-        colors.push(1.0, 0.0, 0.0);
+        colors.push(1.0, 0.0, 1.0);
         
         indices.push(n - i);
     }
     // Size of CONE/ Stretch/Color
     positions.push( 0.0, 0.0, 0.0 );
-    colors.push(1.0, 0.0, 1.0);
+    colors.push(1.0, 0.0, 0.0);
     
     
     indices.push(n);
