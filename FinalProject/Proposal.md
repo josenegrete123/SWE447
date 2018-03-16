@@ -1,17 +1,17 @@
-My final project will be to create a Simon game. 
-It will be made of four different colored buttons and will flash to indicate which button should be pressed. 
-After the correct button is pressed, the next button to be pressed will flash. 
-After a certain amount of correct presses, all the colors will flash indicating that the player has won.
+My final project will be to create a pong game with Codey.
+It will be made with two players being able to play the game.
+The ball will bounce off a pad that player1 and player2 control.
+If either player misses, the other player gets a point.
 
 Week 1:
-Find reference pictures of the Simon game.
+Find reference pictures of the pong game and game rules.
 Week 2:
-Complete the code to render the four different colors on screen.
+Code simple inputs, like movement.
 Week 3:
-Create the ability to interact with the colors on the screen.
+Add collision detection.
 Week 4:
-Create the flashing of the different colors and randomly generate the sequence of colors to be pressed.
+Program the algorithm to hit the ball back and forth.
 Week 5: (Stretch Goal)
-Add audio to every correct press and every incorrect press.
+Add audio/AI.
 
-I will use javascript, webgl, css, THREE.js, and html to create the game.
+I will use webgl and three.js
