@@ -111,8 +111,8 @@ float checkerboard5(vec3 tex_coords, float scale) {
   float b = tex_coords[1];
   float c = tex_coords[2];
 
-  float sum = floor(a * scale) + floor(b * scale)+ floor(c * scale); // same pattern for each face
-  //float sum = floor(a * scale) + floor(b * 2.0*scale)+ floor(c *3.0*scale); // 3 different patterns
+  //float sum = floor(a * scale) + floor(b * scale)+ floor(c * scale); // same pattern for each face
+  float sum = floor(a * scale) + floor(b * 2.0*scale)+ floor(c *3.0*scale); // 3 different patterns
   bool isEven = mod(sum,2.0)==0.0;
   float percent = (isEven) ? 1.0 : 0.0;
 
