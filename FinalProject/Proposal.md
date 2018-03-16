@@ -14,4 +14,4 @@ Create the flashing of the different colors and randomly generate the sequence o
 Week 5: (Stretch Goal)
 Add audio to every correct press and every incorrect press.
 
-I will use java to create the game.
+I will use javascript, webgl, css, and html to create the game.
