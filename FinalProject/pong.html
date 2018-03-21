@@ -51,6 +51,16 @@ var material = new THREE.MeshBasicMaterial({ color: 0xcacccd });
 var ball = new THREE.Mesh(geometryBall, material);
 scene.add(ball);
 
+var text2 = document.createElement('div');
+text2.style.position = 'absolute';
+//text2.style.zIndex = 1;
+text2.style.width = 100;
+text2.style.height = 100;
+text2.style.color = "white";
+text2.innerHTML = "Press Space to start!";
+text2.style.top = 200 + 'px';
+text2.style.left = (WIDTH/2.15) + 'px';
+document.body.appendChild(text2);
 
 player1.position.x = -10;
 player2.position.x = 10;
@@ -120,6 +130,7 @@ var animate = function() {
             if (keyboard.pressed('space') && startedGame == false) {
                 startedGame = true;
                 startGame = true
+				text2.innerHTML = "";
             }
 
             if (startGame == true) {
