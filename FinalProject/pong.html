@@ -329,11 +329,21 @@ var animate = function() {
 
             if (keyboard.pressed("b")) { // add special mode
                     specialMode = true;
-					text3.innerHTML = "Special mode activated!";
-					text3.style.left = (WIDTH / 2.20) + 'px';
+					text3.style.textAlign = 'center';
+					text3.innerHTML = "Special mode activated!<br>Press Z to deactivate Special mode!";
+					text3.style.left = (WIDTH / 2.28) + 'px';
 					text4.innerHTML = "W <br>A  D<br> S";
 					text5.innerHTML = "↑<br>←  →<br> ↓"
             }
+			
+			if(keyboard.pressed("z")){
+						specialMode = false;
+						text3.style.textAlign = 'center';
+						text3.innerHTML =  "Press B to activate Special Mode!";
+						text3.style.left = (WIDTH / 2.25) + 'px';
+						text4.innerHTML = "W <br><br> S";
+						text5.innerHTML = "↑<br><br> ↓"
+			}
 
 
             if (keyboard.pressed("w")) {
