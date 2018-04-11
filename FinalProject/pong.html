@@ -129,16 +129,38 @@ text2.style.top = 230 + 'px';
 text2.style.left = (WIDTH/2.15) + 'px';
 document.body.appendChild(text2);
 
- var text3 = document.createElement('div');
- text3.style.position = 'absolute';
- text3.style.width = 100;
- text3.style.height = 100;
- text3.style.color = "white";
- text3.style.fontSize = "large";
- text3.innerHTML =  "Press B to activate Special Mode!";
- text3.style.top = 620 + 'px';
- text3.style.left = (WIDTH / 2.25) + 'px';
- document.body.appendChild(text3);
+var text3 = document.createElement('div');
+text3.style.position = 'absolute';
+text3.style.width = 100;
+text3.style.height = 100;
+text3.style.color = "white";
+text3.style.fontSize = "large";
+text3.innerHTML =  "Press B to activate Special Mode!";
+text3.style.top = 620 + 'px';
+text3.style.left = (WIDTH / 2.25) + 'px';
+document.body.appendChild(text3);
+
+var text4 = document.createElement('div');
+text4.style.position = 'absolute';
+text4.style.textAlign = 'center';
+text4.style.width = 100;
+text4.style.color = "white";
+text4.style.fontSize = "large";
+text4.innerHTML = "W <br><br> S";
+text4.style.top = (HEIGHT/2.1) + 'px';
+text4.style.left = (WIDTH / 5.3) + 'px';
+document.body.appendChild(text4);
+
+var text5 = document.createElement('div');
+text5.style.position = 'absolute';
+text5.style.textAlign = 'center';
+text5.style.width = 100;
+text5.style.color = "white";
+text5.style.fontSize = "large";
+text5.innerHTML = "↑<br><br> ↓";
+text5.style.top = (HEIGHT/2.1) + 'px';
+text5.style.left = (WIDTH / 1.24) + 'px';
+document.body.appendChild(text5);
 
 var score = document.createElement('div');
             score.style.position = 'absolute';
@@ -168,21 +190,17 @@ player1score.style.top = 40 + 'px';
 player1score.style.left = (WIDTH / 2.1) + 'px';
 document.body.appendChild(player1score);
 
-
-
-
-
-            var player2score = document.createElement('div');
-            player2score.style.position = 'absolute';
-            //player1score.style.zIndex = 1;
-            player2score.style.width = 200;
-            player2score.style.height = 200;
-            player2score.style.color = "white";
-            player2score.style.fontSize = "x-large";
-            player2score.innerHTML = P2Score;
-            player2score.style.top = 40 + 'px';
-            player2score.style.left = (WIDTH / 1.95) + 'px';
-            document.body.appendChild(player2score);
+var player2score = document.createElement('div');
+player2score.style.position = 'absolute';
+//player1score.style.zIndex = 1;
+player2score.style.width = 200;
+player2score.style.height = 200;
+player2score.style.color = "white";
+player2score.style.fontSize = "x-large";
+player2score.innerHTML = P2Score;
+player2score.style.top = 40 + 'px';
+player2score.style.left = (WIDTH / 1.95) + 'px';
+document.body.appendChild(player2score);
 
 player1.position.x = -10;
 player2.position.x = 10;
@@ -310,7 +328,11 @@ var animate = function() {
             }
 
             if (keyboard.pressed("b")) { // add special mode
-                    specialMode = true;     
+                    specialMode = true;
+					text3.innerHTML = "Special mode activated!";
+					text3.style.left = (WIDTH / 2.20) + 'px';
+					text4.innerHTML = "W <br>A  D<br> S";
+					text5.innerHTML = "↑<br>←  →<br> ↓"
             }
 
 
@@ -354,6 +376,8 @@ var animate = function() {
                 startGame = true
                 text2.innerHTML = "";
                 text3.innerHTML = "";
+				text4.innerHTML = "";
+				text5.innerHTML = "";
             }
             if (startGame == true) {
                 if (p1Lose == true) {
@@ -450,7 +474,7 @@ var animate = function() {
 
 
             if (leftGoalCollision || ball.position.x < -25) {
-                P2Score += 1;
+				P2Score += 1;
                 ball.position.x = 0;
                 ball.position.y = 0;
                 p1Lose = true;
@@ -462,13 +486,31 @@ var animate = function() {
                 checkBottomCol = false;
                 player2score.innerHTML = P2Score;
                 text2.innerHTML = "Red press Space";
-                //text2.style.left = (WIDTH / 2.1) + 'px';
+                text2.style.left = (WIDTH / 2.13) + 'px';
                 ballSpeed = orginalSpeed;
             }
-
+			
+			if(P2Score >= 11){
+					if((P2Score-P1Score) >= 2){
+						console.log("P2Wins");
+						text2.innerHTML = "Blue Wins!";
+						text2.style.left = (WIDTH/2.08) + 'px';
+						text3.innerHTML = "Press Space to start a new game!";
+						if(keyboard.pressed("space")){
+							P1Score = 0;
+							P2Score = 0;
+							player1score.innerHTML = P1Score;
+							player2score.innerHTML = P2Score;
+							text2.innerHTML = "";
+							text3.innerHTML = "";
+						}
+						
+					}
+				}
 
             if (rightGoalCollision || ball.position.x > 25) {
-                P1Score += 1;
+                
+				P1Score += 1;
                 ball.position.x = 0;
                 ball.position.y = 0;
                 p2Lose = true;
@@ -480,11 +522,26 @@ var animate = function() {
                 checkBottomCol = false;
                 player1score.innerHTML = P1Score;
                 text2.innerHTML = "Blue press Space";
-                //text2.style.left = (WIDTH / 2.1) + 'px';
+                text2.style.left = (WIDTH / 2.13) + 'px';
                 ballSpeed = orginalSpeed;
             }
-
-
+			
+			if (P1Score >= 11){
+					if((P1Score-P2Score) >= 2){
+						console.log("P1Wins");
+						text2.innerHTML = "Red Wins!";
+						text2.style.left = (WIDTH/2.08) + 'px';
+						text3.innerHTML = "Press Space to start a new game!";
+						if(keyboard.pressed("space")){
+							P1Score = 0;
+							P2Score = 0;
+							player1score.innerHTML = P1Score;
+							player2score.innerHTML = P2Score;
+							text2.innerHTML = "";
+							text3.innerHTML = "";
+						} 
+					}
+				}
 
             if (player1.position.x >= -.5) {
                 player1.position.x -= 0.2 * difficulty;
